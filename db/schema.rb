@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_14_123943) do
+ActiveRecord::Schema.define(version: 2018_10_14_131106) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,11 +33,40 @@ ActiveRecord::Schema.define(version: 2018_10_14_123943) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "event_places", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_places_on_event_id"
+    t.index ["place_id"], name: "index_event_places_on_place_id"
+  end
+
+  create_table "event_users", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_event_users_on_event_id"
+    t.index ["user_id"], name: "index_event_users_on_user_id"
+  end
+
   create_table "events", force: :cascade do |t|
+    t.integer "organization_id"
     t.string "name"
     t.date "held_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_events_on_organization_id"
+  end
+
+  create_table "organization_users", force: :cascade do |t|
+    t.integer "organization_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_organization_users_on_organization_id"
+    t.index ["user_id"], name: "index_organization_users_on_user_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -56,8 +85,17 @@ ActiveRecord::Schema.define(version: 2018_10_14_123943) do
     t.index ["organization_id"], name: "index_places_on_organization_id"
   end
 
+  create_table "user_places", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "place_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["place_id"], name: "index_user_places_on_place_id"
+    t.index ["user_id"], name: "index_user_places_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string "mail"
+    t.string "name"
     t.string "password_digest"
     t.string "display_name"
     t.string "self_introduction"
