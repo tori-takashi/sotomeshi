@@ -1,24 +1,10 @@
-# README
+#sotomeshi
+このアプリは社内のイベントで行ったお店を管理することができます。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
+##Features
+このアプリは、ある組織内で
+* 行ったことのある店の情報
+* 誰が何のイベントでどの店に行ったか
+を管理する機能を提供します。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
