@@ -52,37 +52,17 @@ ActiveRecord::Schema.define(version: 2018_10_14_131106) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.integer "organization_id"
     t.string "name"
     t.date "held_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["organization_id"], name: "index_events_on_organization_id"
-  end
-
-  create_table "organization_users", force: :cascade do |t|
-    t.integer "organization_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["organization_id"], name: "index_organization_users_on_organization_id"
-    t.index ["user_id"], name: "index_organization_users_on_user_id"
-  end
-
-  create_table "organizations", force: :cascade do |t|
-    t.string "name"
-    t.string "display_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "places", force: :cascade do |t|
-    t.integer "organization_id"
     t.string "name"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["organization_id"], name: "index_places_on_organization_id"
   end
 
   create_table "user_places", force: :cascade do |t|
