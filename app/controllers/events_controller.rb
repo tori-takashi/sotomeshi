@@ -3,6 +3,10 @@ class EventsController < ApplicationController
     @events = Event.all
     set_response
   end
+  
+  def new
+    @event = Event.new
+  end
 
   def show
     @event = Event.find(params[:id])
@@ -13,6 +17,12 @@ class EventsController < ApplicationController
   end
 
   def create
+    @event = Event.new(params.require(:event).permit(:name, :held_at))
+    if @event.save
+      redirect_to events_path, notice: "作成しました"
+    else
+      render :create_event
+     end
   end
 
   def delete
@@ -25,4 +35,5 @@ class EventsController < ApplicationController
       f.json
     end
   end
+
 end

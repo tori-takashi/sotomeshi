@@ -1,5 +1,14 @@
-<div class="index-title">
-  <h1>イベント一覧</h1>
+<%= stylesheet_link_tag "events/base", media: "all", "data-turbolinks-tag" => true %>
+<%= stylesheet_link_tag "events/events", media: "all" %>
+
+<div class="sub-header">
+  <div class="index-title">
+    <h1 class="index-title-text">イベント一覧</h1>
+  </div>
+
+  <div class="create-new-event">
+    <p><%= link_to "新規作成", new_event_path, class: "create-new-event-text"%></p>
+  </div>
 </div>
 
 <div class="events">
