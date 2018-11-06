@@ -3,6 +3,7 @@
   <h1><%= link_to "＜" ,events_path, class: "back" %></h1>
   <h1><%= @event.name%></h1>
   <h2><%= link_to "削除する", delete_event_path, class: "delete-button", method: :delete %>
+  <h2><%= link_to "更新する", edit_event_path, class: "update-buttopn" %>
 </div>
   
   <div class="details">
