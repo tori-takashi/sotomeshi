@@ -2,6 +2,7 @@
 <div class="sub-header">
   <h1><%= link_to "＜" ,events_path, class: "back" %></h1>
   <h1><%= @event.name%></h1>
+  <h2><%= link_to "削除する", delete_event_path, class: "delete-button", method: :delete %>
 </div>
   
   <div class="details">
