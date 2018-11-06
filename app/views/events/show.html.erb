@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag "events/show", media: "all" %>
+<div class="sub-header">
+  <h1><%= link_to "＜" ,events_path, class: "back" %></h1>
+  <h1><%= @event.name%></h1>
+</div>
+  
+  <div class="details">
+    <dl>
+      <dt class="detail">イベント名</dt>
+      <dd class="description"><%= @event.name %></dd>
+      <dt class="detail">開催日時</dt>
+      <dd class="description"><%= @event.held_at %></dd>
+      <dt class="detail">場所</dt>
+      <dd class="description">Coming Soon</dd>
+      <dt class="detail">幹事</dt>
+      <dd class="description">Coming Soon</dd>
+      <dt class="detail">最終更新日時</dt>
+      <dd class="description"><%= @event.updated_at %></dd>
+    </dl>
+  </div>

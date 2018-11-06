@@ -1,14 +1,23 @@
 // Place all the styles related to the landing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url("https://fonts.googleapis.com/css?family=Istok+Web");
+.title-wrapper {
+  margin-top: 60px;
+  margin-bottom: 72px;
+  display: flex;
+  justify-content: center;
+  background-color: #eeccaa;
+  border: solid 1px;
+}
 .title {
-  margin: 0 !important;
-  background-color: #33ddaa;
 }
 .title-text {
-  text-align: center;
-  color: white;
-  font-size: 160px;
+  margin: 0;
+  color: #555555;
+  font-family: "Istok Web", sans-serif;
+  font-size: 200px;
+  vertical-align: middle;
 }
 .description {
   text-align: center;
@@ -22,13 +31,20 @@
   margin-left: 32%;
   margin-right: 32%;
   margin-top: 72px;
-  background-color: #66ccaa;
   border-radius: 60px;
+  background-color: #eeccaa;
+}
+.start:hover {
+  .start-text {
+    color: #888888;
+  }
 }
 .start-text {
   padding-top: 16px;
   padding-bottom: 16px;
+  margin: 0;
   text-align: center;
   color: #555555;
   font-size: 64px;
+  text-decoration: none;
 }

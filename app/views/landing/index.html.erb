@@ -1,5 +1,8 @@
-<div class="title">
-  <h1 class="title-text">Sotomeshi</h1>
+<%= stylesheet_link_tag "landing/landing", media: "all", "data-turbolinks-track" => false %>
+<div class="title-wrapper">
+  <div class="title">
+    <h1 class="title-text">Sotomeshi</h1>
+  </div>
 </div>
 <div class="description">
   <article class="description-text">
@@ -8,5 +11,5 @@
   </article>
 </div>
 <div class="start">
-  <h2 class="start-text">はじめる</h2>
+  <h2 class="start-text"><%= link_to "はじめる", events_path, :class => 'start-text' %></h2>
 </div>
