@@ -4,23 +4,28 @@
 .sub-header {
   justify-content: space-between;
 }
+
 .create-new-event {
   margin-right: 24%;
 }
+
 .create-new-event-text {
   vertical-align: middle;
   text-decoration: none;
 }
+
 .events-table {
   table-layout: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .events-table-header {
   margin-left: 8px;
   margin-right: 8px;
 }
+
 .events-table-data {
   margin-left: 8px;
   margin-right: 8px;

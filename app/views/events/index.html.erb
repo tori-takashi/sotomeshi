@@ -2,6 +2,7 @@
 <%= stylesheet_link_tag "events/events", media: "all" %>
 
 <div class="sub-header">
+
   <div class="index-title">
     <h1 class="index-title-text">イベント一覧</h1>
   </div>
@@ -9,11 +10,12 @@
   <div class="create-new-event">
     <p><%= link_to "新規作成", new_event_path, class: "create-new-event-text"%></p>
   </div>
+
 </div>
 
 <div class="events">
-
   <table border="1" class="events-table">
+
     <tr>
       <th class="events-table-header">イベント名</th>
       <th class="events-table-header">開催日時</th>
@@ -23,13 +25,13 @@
     </tr>
     <% @events.each do |event| %>
     <tr>
-      <th class="events-table-data"><%= link_to event.name, action:"show", id: event.id  %></td>
+      <th class="events-table-data"><%= link_to event.name, event_path(event.id)  %></td>
       <th class="events-table-data"><%= event.held_at %></td>
       <th class="events-table-data">Coming Soon</td>
       <th class="events-table-data">Coming Soon</td>
       <th class="events-table-data"><%= event.updated_at %></td>
     </tr>
     <% end %>
-  </table>
 
+  </table>
 </div>
