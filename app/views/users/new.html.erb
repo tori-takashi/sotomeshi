@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "users/base" %>
+<%= stylesheet_link_tag "users/new"%>
+<!-- 戻るボタンのためにリンクしてある -->
+
+<div class="sub-header">
+   <h1><%= link_to "＜", users_path, class: "back" %></h1>
+   <h1>新規ユーザー作成</h1>
+</div>
+
+<div form-content>
+  <%= form_for(@user) do |f| %>
+    
+    <%= f.label "名前"%>
+    <%= f.text_field :name %>
+
+    <%= f.label "表示名" %>
+    <%= f.text_field :display_name %>
+
+    <%= f.label "自己紹介" %>
+    <%= f.text_area :self_introduction %>
+
+    <%= f.submit "作成", data: { disable_with: "更新中..." } %>
+
+  <% end %>
+<div>

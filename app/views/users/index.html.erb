@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "users/base", media: "all", "data-turbolinks-tag" => true %>
+<%= stylesheet_link_tag "users/index", media: "all" %>
+
+<div class="sub-header">
+
+  <div class="index-title">
+    <h1 class="index-title-text">ユーザー一覧</h1>
+  </div>
+
+  <div class="create-new-user">
+    <p><%= link_to "新規作成", new_user_path, class: "create-new-user-text"%></p>
+  </div>
+
+</div>
+
+<div class="users">
+  <table border="1" class="users-table">
+
+    <tr>
+      <th class="users-table-header">ユーザー名</th>
+      <th class="users-table-header">表示名</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <th class="users-table-data"><%= link_to user.name, user_path(user.id)  %></td>
+      <th class="users-table-data"><%= user.name %></td>
+    </tr>
+    <% end %>
+
+  </table>
+</div>

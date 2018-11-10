@@ -1,9 +1,19 @@
-<h1>ユーザー情報</h1>
-  <dl>
-    <dt>ユーザー名</dt>
-    <dd><%= @user.name %></dd>
-    <dt>表示名</dt>
-    <dd><%= @user.display_name %></dd>
-    <dt>自己紹介</dt>
-    <dd><%= @user.self_introduction %></dd>
- </dl>
+<%= stylesheet_link_tag "users/show", media: "all" %>
+
+<div class="sub-header">
+  <h1><%= link_to "＜" ,users_path, class: "back" %></h1>
+  <h1><%= @user.name%></h1>
+  <h2><%= link_to "削除する", user_path(@user.id), class: "delete-button", method: :delete %>
+  <h2><%= link_to "更新する", edit_user_path, class: "update-buttopn" %>
+</div>
+  
+  <div class="details">
+    <dl>
+      <dt class="detail">ユーザー名</dt>
+      <dd class="description"><%= @user.name %></dd>
+      <dt class="detail">表示名</dt>
+      <dd class="description"><%= @user.display_name %></dd>
+      <dt class="detail">自己紹介</dt>
+      <dd class="description"><%= @user.self_introduction %></dd>
+    </dl>
+  </div>

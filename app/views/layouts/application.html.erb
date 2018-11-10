@@ -17,8 +17,18 @@
         </div>
       </div>
     </header>
+
     <div class="content">
-      <%= yield %>
+
+      <div class="side-menu">
+        <%= link_to "イベント一覧", events_path, class: "side-menu-item" %>
+        <%= link_to "ユーザー一覧", users_path, class: "side-menu-item" %>
+      </div>
+
+      <div class="view-content">
+        <%= yield %>
+      </div>
+
     </div>
   </body>
 </html>

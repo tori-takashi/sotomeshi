@@ -1,0 +1,35 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.sub-header {
+  justify-content: space-between;
+}
+
+.create-new-event {
+  margin-right: 24%;
+}
+
+.create-new-event-text {
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.users-table {
+  table-layout: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.users-table-header {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.users-table-data {
+  margin-left: 8px;
+  margin-right: 8px;
+}
