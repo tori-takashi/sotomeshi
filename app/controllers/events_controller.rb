@@ -41,6 +41,17 @@ class EventsController < ApplicationController
     end
   end
 
+  def selectable_users
+    event_attended_users = EventUser.where(event_id: params[:id]).pluck(:user_id)
+    @selectable_users = User.where.not(id: event_attended_users)
+    render :select_attendance
+  end
+
+  def attend
+    EventUser.create(event_id: params[:id], user_id: params[:user_id])
+    redirect_to event_path(params[:id]), notice: "ユーザーの参加が完了しました" 
+  end
+
   private
   #responseだと別メソッドをオーバーライドしてしまう
   def set_response

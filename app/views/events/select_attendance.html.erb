@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag "users/base", media: "all", "data-turbolinks-tag" => true %>
+<%= stylesheet_link_tag "users/index", media: "all" %>
+
+<div class="sub-header">
+
+  <h1><%= link_to  "＜", events_path, class: "back" %></h1>
+
+  <div class="index-title">
+    <h1 class="index-title-text">選択可能ユーザー一覧</h1>
+  </div>
+
+</div>
+
+<div class="users">
+  <table border="1" class="users-table">
+
+    <tr>
+      <th class="users-table-header">ユーザー名</th>
+      <th class="users-table-header">表示名</th>
+    </tr>
+    <% @selectable_users.each do |user| %>
+    <tr>
+      <th class="users-table-data"><%= link_to user.name, attend_event_path(user_id: user.id), method: :post  %></td>
+      <th class="users-table-data"><%= user.name %></td>
+    </tr>
+    <% end %>
+
+  </table>
+</div>

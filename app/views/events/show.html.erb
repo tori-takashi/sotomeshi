@@ -3,8 +3,9 @@
 <div class="sub-header">
   <h1><%= link_to "＜" ,events_path, class: "back" %></h1>
   <h1><%= @event.name%></h1>
-  <h2><%= link_to "削除する", event_path(@event.id), class: "delete-button", method: :delete %>
-  <h2><%= link_to "更新する", edit_event_path, class: "update-buttopn" %>
+  <h2><%= link_to "削除", event_path(@event.id), class: "delete-button", method: :delete %>
+  <h2><%= link_to "更新", edit_event_path, class: "update-button" %>
+  <h2><%= link_to "ユーザー追加", select_attendance_event_path , class: "useradd_button" %>
 </div>
   
   <div class="details">
@@ -20,4 +21,11 @@
       <dt class="detail">最終更新日時</dt>
       <dd class="description"><%= @event.updated_at %></dd>
     </dl>
+
+    参加者
+    <ul>
+      <% @event.attendance.each do |attendance| %>
+        <li><%= link_to attendance.display_name, user_path(attendance.id) %></li>
+      <% end %>
+    </ul>
   </div>
